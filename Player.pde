@@ -1,12 +1,13 @@
 class Player
 {
-  float x,y,xLength,yLength,jumpForce;
+  float x,y,xLength,yLength,jumpForce,yDefault;
   PImage dino;
-  boolean spaceIsDown=false;
+  boolean spaceIsDown;
   Player(float a, float b, float c, float d, float e, PImage f)
   {
     x=a;
     y=b;
+    yDefault=b;
     xLength=c;
     yLength=d;
     jumpForce=e;
@@ -14,15 +15,15 @@ class Player
   }
   void update()
   {
-    if(spaceIsDown==true)
+    if(spaceIsDown)
     {
-      float jump=jumpForce;
-      if(jump<jumpForce * -1)
-      {
-        y+=jump;
-        jump--;
-      }
-      spaceIsDown=false;
+      y-=jumpForce;
+      yLength-=jumpForce;
+    }
+    else if(y<yDefault)
+    {
+      y+=5;
+      yLength+=5;
     }
   }
   void draw()
