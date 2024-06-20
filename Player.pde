@@ -6,7 +6,7 @@ class Player
   float yLength;
   float jumpForce;
   float yDefault;
-  float counter;
+  boolean check;
   PImage dino;
   boolean spaceIsDown;
   Player(float x1, float y1, float xLength1, float yLength1, float jumpForce1, PImage dino1)
@@ -18,25 +18,30 @@ class Player
     yLength=yLength1;
     jumpForce=jumpForce1;
     dino=dino1;
-    counter=300;
+    check=false;
   }
   void update()
   {
-    counter--;
-    if(spaceIsDown&&counter<=0)
+    if(y<100)
+    {
+      check=true;
+    }
+    if(spaceIsDown&&check==false)
     {
       y-=jumpForce;
       yLength-=jumpForce;
     }
     else if(y<yDefault)
     {
-      y+=5;
-      yLength+=5;
+      y+=jumpForce;
+      yLength+=jumpForce;
+      check=true;
     }
-    else if(counter<0)
+    else
     {
-      counter=300;
+      check=false;
     }
+    
   }
   void draw()
   {
