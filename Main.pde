@@ -7,7 +7,7 @@ void setup()
   size(1600,1000);
   assets=loadImage("assets.png");
   p1 = new Player(300, 500, 100, 100, 15, assets.get(0,0,100,100));
-  ob1= new Obstacle(1600, 800, 100, 100, 15, 300, assets.get(0,0,100,100));
+  ob1= new Obstacle(1600, 500, 100, 100, 15, 300, assets.get(0,0,100,100));
 }
 
 void draw()

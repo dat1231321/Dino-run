@@ -22,19 +22,17 @@ class Player
   }
   void update()
   {
-    if(y<100)
+    if(y<200)
     {
       check=true;
     }
     if(spaceIsDown&&check==false)
     {
       y-=jumpForce;
-      yLength-=jumpForce;
     }
     else if(y<yDefault)
     {
       y+=jumpForce;
-      yLength+=jumpForce;
       check=true;
     }
     else

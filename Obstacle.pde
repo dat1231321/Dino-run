@@ -7,8 +7,6 @@ class Obstacle
   float xDefault;
   float xTem;
   float yTem;
-  float xLengthTem;
-  float yLengthTem;
   float speed;
   float counter;
   float counter1;
@@ -21,8 +19,6 @@ class Obstacle
     yTem=y1;
     xLength=xLength1;
     yLength=yLength1;
-    xLengthTem=xLength1;
-    yLengthTem=yLength1;
     speed=speed1;
     obstacle=obstacle1;
     counter=frequently;
@@ -34,13 +30,11 @@ class Obstacle
     if(counter1>counter)
     {
       x-=speed;
-      xLength-=speed;
     }
-    if(x==0)
+    if(x+xLength<=0)
     {
       x=xTem;
-      xLength=xLengthTem;
-      counter=0;
+      counter1=0;
     }
   }
   void draw()
