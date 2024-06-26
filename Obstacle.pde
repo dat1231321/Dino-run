@@ -11,7 +11,7 @@ class Obstacle
   float counter;
   float counter1;
   PImage obstacle;
-  Obstacle(float x1, float y1, float xLength1, float yLength1, float speed1,  float frequently, PImage obstacle1)
+  Obstacle(float x1, float y1, float xLength1, float yLength1, float speed1, float frequently, PImage obstacle1)
   {
     x=x1;
     y=y1;
@@ -27,11 +27,11 @@ class Obstacle
   void update()
   {
     counter1++;
-    if(counter1>counter)
+    if (counter1>counter)
     {
       x-=speed;
     }
-    if(x+xLength<=0)
+    if (x+xLength<=0)
     {
       x=xTem;
       counter1=0;
@@ -39,6 +39,6 @@ class Obstacle
   }
   void draw()
   {
-    image(obstacle,x,y);
+    image(obstacle, x, y);
   }
 }
